@@ -1,0 +1,93 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Tourism Data by State",
+    "width": 800,
+    "height": 500,
+    "params": [
+      {
+        "name": "Year_selection",
+        "value": 2018,
+        "bind": {
+          "input": "range",
+          "min": 1991,
+          "max": 2023,
+          "step": 1,
+          "name": "Year:  "
+        }
+      }
+    ],
+    "projection": {
+      "type": "equirectangular"
+    },
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/australia_map.json",
+          "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+        },
+        "transform": [
+          {
+            "calculate": "'Data is not available in ' + datum.properties.STE_NAME21",
+            "as": "note"
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "fill": "#ddd",
+          "stroke": "white",
+          "strokeWidth": 1
+        },
+        "encoding": {
+          "tooltip": {"field": "note"}
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/tourism_data.csv"
+        },
+        "transform": [
+          {
+            "lookup": "States",
+            "from": {
+              "data": {
+                "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/australia_map.json",
+                "format": {
+                  "type": "topojson",
+                  "feature": "STE_2021_AUST_GDA2020"
+                }
+              },
+              "key": "properties.STE_NAME21"
+            },
+            "as": "geo"
+          },
+          {
+            "filter": "datum.Year == Year_selection"
+          }
+        ],
+        "mark": {
+          "type": "geoshape",
+          "stroke": "#fff",
+          "strokeWidth": 0.5
+        },
+        "encoding": {
+          "shape": {"field": "geo", "type": "geojson"},
+          "color": {
+            "field": "Total Visitors",
+            "type": "quantitative",
+            "scale": {"scheme": "reds"},
+            "legend": {"format": ".2s"}
+          },
+          "tooltip": [
+            {"field": "States", "type": "nominal", "title": "State"},
+            {
+              "field": "Total Visitors",
+              "type": "quantitative",
+              "title": "Number of Tourists",
+              "format": ","
+            },
+            {"field": "Year", "type": "quantitative", "title": "Year"}
+          ]
+        }
+      }
+    ]
+  }

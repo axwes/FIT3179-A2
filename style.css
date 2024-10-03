@@ -1,0 +1,32 @@
+body {
+  background-color: #f8f9fa; /* Light grey background for the page */
+}
+.dashboard-container {
+  background-color: #e9ecef; /* Grey background for the dashboard */
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 1200px; /* Limit the width of the dashboard */
+}
+#country_origin_chart, #total_visitor_chart {
+  width: 100%;
+  max-width: 1000px; /* Set a maximum width for the charts */
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the chart */
+  position: relative;
+}
+.btn-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-tabs {
+  justify-content: center;
+}
+.tab-content {
+  padding: 20px;
+}

@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 1000,
-    "height": 700,
+    "width": 800,
+    "height": 500,
     "projection": {"type": "equirectangular"},
     "data": {
       "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/world_map.json?token=GHSAT0AAAAAACW6IY5QGS7PARA2WMZYWURSZXZVHOA",
