@@ -43,7 +43,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/tourism_data.csv"
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/tourist_state.csv"
         },
         "transform": [
           {
