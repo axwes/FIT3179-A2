@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1000,
+    "height": 700,
+    "projection": {"type": "equirectangular"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/world_map.json?token=GHSAT0AAAAAACW6IY5QGS7PARA2WMZYWURSZXZVHOA",
+      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    },
+    "layer": [
+      {
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "condition": {
+              "test": "datum.properties.ADM0_A3 === 'AUS'", 
+              "value": "#71797E"
+            },
+            "value": "#d3d3d3"  
+          }
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country%20Visitor.csv?token=GHSAT0AAAAAACW6IY5RAMUOVI3H6DBMJTUQZXZUXIQ",
+          "format": {"type": "csv"}
+        },
+        "layer": [
+          {
+            "mark": "circle",
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {"field": "Number Of Visitors", "type": "quantitative"},
+              "tooltip": [
+                {"field": "Country of Residence", "type": "nominal"},
+                {"field": "Number Of Visitors", "type": "quantitative"}
+              ]
+            }
+          },
+          {
+            "mark": {"type": "rule", "color": "red", "strokeWidth": 2},
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "longitude2": {"datum": 134.04972},  
+              "latitude2": {"datum": -24.129522}, 
+              "tooltip": [{"field": "Country of Residence"}]
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
+  
