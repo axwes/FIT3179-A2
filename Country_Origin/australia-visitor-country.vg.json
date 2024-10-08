@@ -1,10 +1,11 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "rgba(0, 0, 0, 0)", 
     "width": 800,
     "height": 500,
     "projection": {"type": "equirectangular"},
     "data": {
-      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/world_map.json?token=GHSAT0AAAAAACW6IY5QGS7PARA2WMZYWURSZXZVHOA",
+      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/world_map.json",
       "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
     },
     "layer": [
@@ -22,7 +23,7 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country%20Visitor.csv?token=GHSAT0AAAAAACW6IY5RAMUOVI3H6DBMJTUQZXZUXIQ",
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/Country%20Visitor.csv",
           "format": {"type": "csv"}
         },
         "layer": [

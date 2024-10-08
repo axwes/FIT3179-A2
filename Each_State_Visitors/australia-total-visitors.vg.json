@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "rgba(0, 0, 0, 0)", 
   "title": "Tourism Data by State",
   "width": 800,
   "height": 500,
@@ -22,7 +23,7 @@
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/australia_map.json",
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
         "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
       },
       "transform": [
@@ -43,14 +44,14 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/tourist_top_states.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/tourist_top_states.csv"
       },
       "transform": [
         {
           "lookup": "States",
           "from": {
             "data": {
-              "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/australia_map.json",
+              "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
               "format": {
                 "type": "topojson",
                 "feature": "STE_2021_AUST_GDA2020"
@@ -91,7 +92,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Top_Visited_States_Per_Year.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/Top_Visited_States_Per_Year.csv"
       },
       "transform": [
         {"filter": "datum.Year == Year_selection"},
@@ -114,7 +115,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Lowest_Visited_States_Per_Year.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/Lowest_Visited_States_Per_Year.csv"
       },
       "transform": [
         {"filter": "datum.Year == Year_selection"},
