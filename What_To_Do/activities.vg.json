@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "rgba(0, 0, 0, 0)", 
+    "width": 800,
+    "height": 500,
+    "projection": {"type": "equirectangular"},
+    "data": {
+      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
+      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+    },
+    "layer": [
+      {
+        "mark": {"type": "geoshape", "stroke": "white"},
+        "encoding": {
+          "color": {
+            "condition": {
+              "test": "datum.properties.ADM0_A3 === 'AUS'", 
+              "value": "#71797E"
+            },
+            "value": "#d3d3d3"  
+          }
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/What_To_Do/australiaActivities.csv"
+        },
+        "mark": "circle",
+        "encoding": {
+          "longitude": {
+            "field": "Longitude",
+            "type": "quantitative"
+          },
+          "latitude": {
+            "field": "Latitude",
+            "type": "quantitative"
+          },
+          "size": {
+            "value": 200
+          },
+          "color": {
+            "field": "Category",
+            "type": "nominal",
+            "legend": {
+              "title": "Activity Categories"
+            }
+          },
+          "tooltip": [
+            {
+              "field": "Activities",
+              "type": "nominal",
+              "title": "Activity"
+            },
+            {
+              "field": "Location",
+              "type": "nominal",
+              "title": "Location"
+            },
+            {
+              "field": "Category",
+              "type": "nominal",
+              "title": "Category"
+            },
+            {
+              "field": "Region",
+              "type": "nominal",
+              "title": "Region"
+            }
+          ]
+        }
+      }
+    ]
+  }
