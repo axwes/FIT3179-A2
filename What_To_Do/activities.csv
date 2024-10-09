@@ -1,34 +1,34 @@
 ﻿Activities,Location,Category,Latitude,Longitude,Region
-Trekking,Royal National Park,Activities & Adventure,151.0637,-34.1184,NSW
-Sightseeing,Mungo National Park,Sightseeing & Nature,143.1225,-33.7421,NSW
-Sightseeing,Western Plains Zoo,Sightseeing & Nature,148.584,-32.2873,NSW
-Sightseeing,Cape Byron Lighthouse,Sightseeing & Nature,153.6362,-28.6385,NSW
-Swimming,Bondi Beach,Relaxation & Wellness,151.2767,-33.8915,NSW
-Sightseeing,Sydney Opera House,Sightseeing & Nature,151.2153,-33.8568,NSW
-Scenic Drive,Blue Mountains,Sightseeing & Nature,150.4865,-33.3856,NSW
-Whale Watching,Hervey Bay,Sightseeing & Nature,152.7677,-25.2882,NSW
-Bushwalking,Grampians National Park,Sightseeing & Nature,142.398,-37.2109,NSW
-Wildlife Watching,Taronga Zoo,Sightseeing & Nature,151.2413,-33.8435,NSW
-Dolphin Watching,Port Stephens,Sightseeing & Nature,151.8409,-32.7685,NSW
-Hot Air Ballooning,Hunter Valley,Activities & Adventure,151.7006,-32.1932,NSW
-Scenic Boat Tour,Sydney Harbour,Sightseeing & Nature,151.2489,-33.8462,NSW
-Cultural Festival,Circular Quay,Sightseeing & Nature,151.2126,-33.8611,NSW
-Paragliding,Wollongong,Activities & Adventure,150.8931,-34.4248,NSW
-Climbing,Mount Kosciuszko,Activities & Adventure,148.2636,-36.4559,NSW
-Hiking,Blue Mountains,Sightseeing & Nature,150.4865,-33.3856,NSW
-Sightseeing,Twelve Apostles,Sightseeing & Nature,143.1051,-38.6621,VIC
-Hiking,Grampians National Park,Activities & Adventure,142.398,-37.2109,VIC
-Spa and Wellness Retreat,Mornington Peninsula,Relaxation & Wellness,145.0934,-38.2854,VIC
-Wildlife Watching,Phillip Island,Sightseeing & Nature,145.2038,-38.4899,VIC
-Scenic Drive,Great Ocean Road,Sightseeing & Nature,143.687271,-38.733826,VIC
-Art Gallery Visit,National Gallery of Victoria,Sightseeing & Nature,144.9689,-37.8226,VIC
-Cultural Festival,Melbourne International Film Festival,Sightseeing & Nature,144.9623,-37.8124,VIC
-Museum Tour,Melbourne Museum,Sightseeing & Nature,144.9717,-37.8033,VIC
-Wildlife Watching,Wilsons Promontory,Sightseeing & Nature,146.3717,-38.9804,VIC
-Scenic Rail Journey,Puffing Billy Railway,Sightseeing & Nature,145.3566,-37.9077,VIC
-Hot Springs Soak,Hepburn Springs,Relaxation & Wellness,144.1386,-37.3183,VIC
-Horseback Riding,Yarra Valley,Activities & Adventure,145.7134,-37.7451,VIC
-Whale Watching,Warrnambool,Sightseeing & Nature,142.4778,-38.3721,VIC
+Trekking,Royal National Park,Activities & Adventure,-34.1184,151.0637,NSW
+Sightseeing,Mungo National Park,Sightseeing & Nature,-33.7421,143.1225,NSW
+Sightseeing,Western Plains Zoo,Sightseeing & Nature,-32.2873,148.584,NSW
+Sightseeing,Cape Byron Lighthouse,Sightseeing & Nature,-28.6385,153.6362,NSW
+Swimming,Bondi Beach,Relaxation & Wellness,-33.8915,151.2767,NSW
+Sightseeing,Sydney Opera House,Sightseeing & Nature,-33.8568,151.2153,NSW
+Scenic Drive,Blue Mountains,Sightseeing & Nature,-33.3856,150.4865,NSW
+Whale Watching,Hervey Bay,Sightseeing & Nature,-25.2882,152.7677,NSW
+Bushwalking,Grampians National Park,Sightseeing & Nature,-37.2109,142.398,NSW
+Wildlife Watching,Taronga Zoo,Sightseeing & Nature,-33.8435,151.2413,NSW
+Dolphin Watching,Port Stephens,Sightseeing & Nature,-32.7685,151.8409,NSW
+Hot Air Ballooning,Hunter Valley,Activities & Adventure,-32.1932,151.7006,NSW
+Scenic Boat Tour,Sydney Harbour,Sightseeing & Nature,-33.8462,151.2489,NSW
+Cultural Festival,Circular Quay,Sightseeing & Nature,-33.8611,151.2126,NSW
+Paragliding,Wollongong,Activities & Adventure,-34.4248,150.8931,NSW
+Climbing,Mount Kosciuszko,Activities & Adventure,-36.4559,148.2636,NSW
+Hiking,Blue Mountains,Sightseeing & Nature,-33.3856,150.4865,NSW
+Sightseeing,Twelve Apostles,Sightseeing & Nature,-38.6621,143.1051,VIC
+Hiking,Grampians National Park,Activities & Adventure,-37.2109,142.398,VIC
+Spa and Wellness Retreat,Mornington Peninsula,Relaxation & Wellness,-38.2854,145.0934,VIC
+Wildlife Watching,Phillip Island,Sightseeing & Nature,-38.4899,145.2038,VIC
+Scenic Drive,Great Ocean Road,Sightseeing & Nature,-38.733826,143.687271,VIC
+Art Gallery Visit,National Gallery of Victoria,Sightseeing & Nature,-37.8226,144.9689,VIC
+Cultural Festival,Melbourne International Film Festival,Sightseeing & Nature,-37.8124,144.9623,VIC
+Museum Tour,Melbourne Museum,Sightseeing & Nature,-37.8033,144.9717,VIC
+Wildlife Watching,Wilsons Promontory,Sightseeing & Nature,-38.9804,146.3717,VIC
+Scenic Rail Journey,Puffing Billy Railway,Sightseeing & Nature,-37.9077,145.3566,VIC
+Hot Springs Soak,Hepburn Springs,Relaxation & Wellness,-37.3183,144.1386,VIC
+Horseback Riding,Yarra Valley,Activities & Adventure,-37.7451,145.7134,VIC
+Whale Watching,Warrnambool,Sightseeing & Nature,-38.3721,142.4778,VIC
 Snorkelling,Great Barrier Reef,Activities & Adventure,-18.2871,147.6992,QLD
 Cultural & Historical Experiences,Parliament House,Sightseeing & Nature,-35.307,149.125,QLD
 Hiking,Lamington National Park,Activities & Adventure,-28.2167,153.15,QLD
@@ -46,7 +46,7 @@ Bird Watching,Fraser Island,Sightseeing & Nature,-25.2398,153.1325,QLD
 Waterfall Viewing,Springbrook National Park,Sightseeing & Nature,-28.2077,153.2903,QLD
 Island Hopping,Whitsunday Islands,Sightseeing & Nature,-20.3,148.933,QLD
 Camel Riding,Broome,Activities & Adventure,-17.9618,122.237,WA
-Fly over,Bungle Bungles,Activities & Adventure,17.4214,128.4449,WA
+Fly over,Bungle Bungles,Activities & Adventure,-17.4214,128.4449,WA
 Boat Riding,Horizontal Falls,Activities & Adventure,-17.9535,122.245,WA
 Snorkeling,Ningaloo Reef,Activities & Adventure,-22.5625,113.8103,WA
 Wildlife Watching,Monkey Mia,Sightseeing & Nature,-25.7938,113.7198,WA
@@ -56,9 +56,9 @@ Whale Watching,Albany,Sightseeing & Nature,-35.0268,117.8837,WA
 Hot Air Ballooning,Avon Valley,Activities & Adventure,-31.6058,116.2237,WA
 Hiking,Kalbarri National Park,Activities & Adventure,-27.6798,114.2719,WA
 Cultural Tour,Fremantle Prison,Sightseeing & Nature,-32.055,115.7537,WA
-Scenic Boat Tour,"Swan River, Perth",Sightseeing & Nature,31.895,115.993,WA
+Scenic Boat Tour,"Swan River, Perth",Sightseeing & Nature,-31.895,115.993,WA
 Desert Safari,Pinnacles Desert,Activities & Adventure,-30.5913,115.1582,WA
-Mountain Biking,Cape to Cape Track,Activities & Adventure,33.6817,114.9944,WA
+Mountain Biking,Cape to Cape Track,Activities & Adventure,-33.6817,114.9944,WA
 Scenic Helicopter Tour,Kimberley,Activities & Adventure,-28.7435,24.7626,WA
 Wildlife Watching,Kangaroo Island,Sightseeing & Nature,-35.7752,137.2142,SA
 Horse Riding,Flinders Ranges,Activities & Adventure,-31.547,138.3928,SA
