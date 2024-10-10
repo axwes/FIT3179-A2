@@ -7,7 +7,7 @@ body {
 
 /* Dashboard Container */
 .dashboard-container {
-  background-color: #ffe6e6; /* Pastel pink background for the dashboard */
+  background-color: #232428; /* Pastel pink background for the dashboard */
   padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
@@ -16,7 +16,6 @@ body {
 
 /* Styling for the charts */
 #country_origin_chart, #total_visitor_chart {
-  width: 100%;
   max-width: 1000px;
   height: 600px;
   display: flex;
@@ -24,6 +23,8 @@ body {
   align-items: center;
   margin: 0 auto;
   position: relative;
+  border: none;
+  padding: 0;
 }
 
 /* Button container for the charts */
@@ -32,6 +33,16 @@ body {
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* Yellow Font */
+.brown-text {
+  color: #b0884d; /* Sets the text color to yellow */
+}
+
+/* White Font */
+.white-text {
+  color: white; /* Sets the text color to white */
 }
 
 /* Tabs */
@@ -99,5 +110,17 @@ h1, h2, p, .nav-link {
   max-width: 1000px; /* Restrict the maximum width for better centering */
 }
 
+.map-overlay {
+  position: absolute;
+  top: 20px; /* Adjust this value based on how far down you want the text */
+  left: 20px; /* Adjust this value based on how far to the right you want the text */
+  z-index: 10; /* Ensures the text stays above the map */
+}
+
+.overlay-text {
+  position: absolute;  /* Make the text overlay positioned absolutely */
+  color: white;        /* Text color */
+  font-size: 15px;     /* Font size */
+}
 
 

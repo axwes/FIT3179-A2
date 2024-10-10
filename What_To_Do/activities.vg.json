@@ -3,6 +3,15 @@
     "background": "rgba(0, 0, 0, 0)", 
     "width": 800,
     "height": 500,
+    "config": {
+        "axis": {
+          "domain": false,
+          "grid": false
+        },
+        "view": {
+          "stroke": null
+        }
+      },
     "projection": {"type": "equirectangular"},
     "data": {
       "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
@@ -67,7 +76,34 @@
               "title": "Region"
             }
           ]
+        },
+        "transform": [
+          {
+            "filter": "datum.Region === regionSelection || regionSelection === 'All Regions'"
+          }
+        ]
+      }
+    ],
+    "params": [
+      {
+        "name": "regionSelection",
+        "value": "All Regions",  
+        "bind": {
+          "input": "select",
+          "options": [
+            "All Regions",
+            "VIC",
+            "NSW",
+            "QLD",
+            "WA",
+            "SA",
+            "TAS",
+            "NT",
+            "ACT"
+          ],
+          "name": "Select Region: "
         }
       }
     ]
   }
+  

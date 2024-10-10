@@ -4,6 +4,15 @@
     "data": {
       "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Travelling_Reasons/Travel%20Reasons.csv"
     },
+    "config": {
+      "axis": {
+        "domain": false,
+        "grid": false
+      },
+      "view": {
+        "stroke": null
+      }
+    },
     "transform": [
       {
         "filter": "datum.Year == yearSelection"

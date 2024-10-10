@@ -1,9 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "background": "rgba(0, 0, 0, 0)", 
-  "title": "Tourism Data by State",
   "width": 800,
   "height": 500,
+  "config": {
+    "axis": {
+      "domain": false,
+      "grid": false
+    },
+    "view": {
+      "stroke": null
+    }
+  },
   "params": [
     {
       "name": "Year_selection",
@@ -13,7 +21,8 @@
         "min": 1991,
         "max": 2023,
         "step": 1,
-        "name": "Year:  "
+        "name": "Select Year: ",
+        "labelColor": "#ff7043"
       }
     }
   ],
@@ -75,7 +84,7 @@
         "color": {
           "field": "Total Visitors",
           "type": "quantitative",
-          "scale": {"scheme": "blues"},
+          "scale": {"scheme": "browns"},
           "legend": {"format": ".2s"}
         },
         "tooltip": [

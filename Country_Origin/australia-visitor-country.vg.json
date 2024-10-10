@@ -3,6 +3,15 @@
     "background": "rgba(0, 0, 0, 0)", 
     "width": 800,
     "height": 500,
+    "config": {
+      "axis": {
+        "domain": false,
+        "grid": false
+      },
+      "view": {
+        "stroke": null
+      }
+    },
     "projection": {"type": "equirectangular"},
     "data": {
       "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/world_map.json",
@@ -10,14 +19,15 @@
     },
     "layer": [
       {
-        "mark": {"type": "geoshape", "stroke": "white"},
+        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
         "encoding": {
           "color": {
             "condition": {
               "test": "datum.properties.ADM0_A3 === 'AUS'", 
               "value": "#71797E"
             },
-            "value": "#d3d3d3"  
+            "value": "#b0884d",
+            "legend": null   
           }
         }
       },
@@ -32,7 +42,10 @@
             "encoding": {
               "longitude": {"field": "Longitude", "type": "quantitative"},
               "latitude": {"field": "Latitude", "type": "quantitative"},
-              "size": {"field": "Number Of Visitors", "type": "quantitative"},
+              "size": {"field": "Number Of Visitors", "type": "quantitative", "scale": {"range": [100, 1000]}, "legend": null},
+              "color": {
+                "value": "white"
+              },
               "tooltip": [
                 {"field": "Country of Residence", "type": "nominal"},
                 {"field": "Number Of Visitors", "type": "quantitative"}
@@ -40,7 +53,7 @@
             }
           },
           {
-            "mark": {"type": "rule", "color": "red", "strokeWidth": 2},
+            "mark": {"type": "rule", "color": "white", "strokeWidth": 2},
             "encoding": {
               "longitude": {"field": "Longitude", "type": "quantitative"},
               "latitude": {"field": "Latitude", "type": "quantitative"},
