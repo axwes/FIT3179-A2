@@ -6,8 +6,6 @@ Sightseeing,Cape Byron Lighthouse,Sightseeing & Nature,-28.6385,153.6362,NSW
 Swimming,Bondi Beach,Relaxation & Wellness,-33.8915,151.2767,NSW
 Sightseeing,Sydney Opera House,Sightseeing & Nature,-33.8568,151.2153,NSW
 Scenic Drive,Blue Mountains,Sightseeing & Nature,-33.3856,150.4865,NSW
-Whale Watching,Hervey Bay,Sightseeing & Nature,-25.2882,152.7677,NSW
-Bushwalking,Grampians National Park,Sightseeing & Nature,-37.2109,142.398,NSW
 Wildlife Watching,Taronga Zoo,Sightseeing & Nature,-33.8435,151.2413,NSW
 Dolphin Watching,Port Stephens,Sightseeing & Nature,-32.7685,151.8409,NSW
 Hot Air Ballooning,Hunter Valley,Activities & Adventure,-32.1932,151.7006,NSW
@@ -30,7 +28,7 @@ Hot Springs Soak,Hepburn Springs,Relaxation & Wellness,-37.3183,144.1386,VIC
 Horseback Riding,Yarra Valley,Activities & Adventure,-37.7451,145.7134,VIC
 Whale Watching,Warrnambool,Sightseeing & Nature,-38.3721,142.4778,VIC
 Snorkelling,Great Barrier Reef,Activities & Adventure,-18.2871,147.6992,QLD
-Cultural & Historical Experiences,Parliament House,Sightseeing & Nature,-35.307,149.125,QLD
+Cultural & Historical Experiences,Parliament House,Sightseeing & Nature,-35.307,149.125,ACT
 Hiking,Lamington National Park,Activities & Adventure,-28.2167,153.15,QLD
 Wildlife Watching,Daintree Rainforest,Sightseeing & Nature,-16.17,145.4185,QLD
 Kayaking,Noosa Everglades,Activities & Adventure,-26.3734,153.0097,QLD
@@ -76,7 +74,6 @@ Cultural & Historical Experiences,Port Arthur,Sightseeing & Nature,-43.1396,147.
 Wildlife Watching,Tasmanian Wilderness,Sightseeing & Nature,-42.5957,146.1729,TAS
 Sightseeing,Wineglass Bay,Sightseeing & Nature,-42.168,148.302,TAS
 Hiking,Freycinet National Park,Activities & Adventure,-42.1306,148.3123,TAS
-Rafting,Franklin River,Activities & Adventure,-38.6523,146.2765,TAS
 Scenic Boat Tour,Bruny Island,Sightseeing & Nature,-43.3937,147.2679,TAS
 Scenic Rail Journey,West Coast Wilderness Railway,Sightseeing & Nature,-42.1601,145.3278,TAS
 Cultural Tour,Hobart Waterfront,Sightseeing & Nature,-42.88,147.324,TAS
