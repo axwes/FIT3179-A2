@@ -1,109 +1,107 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "background": "rgba(0, 0, 0, 0)", 
-    "width": 800,
-    "height": 500,
-    "config": {
-        "axis": {
-          "domain": false,
-          "grid": false
-        },
-        "view": {
-          "stroke": null
-        }
-      },
-    "projection": {"type": "equirectangular"},
-    "data": {
-      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
-      "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Activities across Australia with Zoom, Region, and Category Filtering",
+  "width": "900",
+  "height": "600",
+  "params": [
+    {
+      "name": "zoom_level",
+      "value": 900,
+      "bind": {
+        "input": "range",
+        "min": 900,
+        "max": 50000,
+        "step": 100,
+        "name": "Zoom: "
+      }
     },
-    "layer": [
-      {
-        "mark": {"type": "geoshape", "stroke": "white"},
-        "encoding": {
-          "color": {
-            "condition": {
-              "test": "datum.properties.ADM0_A3 === 'AUS'", 
-              "value": "#71797E"
-            },
-            "value": "#d3d3d3"  
-          }
-        }
+    {
+      "name": "center_to",
+      "value": [135, -25],
+      "bind": {
+        "input": "select",
+        "options": [
+          [135, -25],
+          [144.9631, -37.8136],  
+          [153.0281, -25.4679],  
+          [146.2, -18],  
+          [115.8575, -30.9505],  
+          [138.6007, -34.9285],  
+          [148.3257, -41.8821],  
+          [131.8456, -15.4634],  
+          [133, -24],  
+          [149.1300, -35.2809]   
+        ],
+        "labels": [
+          "Australia",
+          "Victoria",
+          "New South Wales",
+          "Queensland (South East)",
+          "Queensland (North)",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory (North)",
+          "Northern Territory (South)",
+          "Australian Capital Territory"
+        ],
+        "name": "Map Center: "
+      }
+    },
+    {
+      "name": "categorySelection",
+      "value": "All Categories",
+      "bind": {
+        "input": "select",
+        "options": ["All Categories", "Activities & Adventure", "Relaxation & Wellness", "Sightseeing & Nature"],
+        "name": "Select Category: "
+      }
+    }
+  ],
+  "projection": {
+    "type": "equirectangular",
+    "center": {"expr": "center_to"},
+    "scale": {"expr": "zoom_level"}
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
+        "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/What_To_Do/australiaActivities.csv"
+      "mark": {"type": "geoshape", "stroke": "white", "fill": "#ddd"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/What_To_Do/australiaActivities.csv"
+      },
+      "transform": [
+        {
+          "calculate": "{'Activities & Adventure': '🧗‍♂️', 'Relaxation & Wellness': '🏖️', 'Sightseeing & Nature': '🏞️'}[datum.Category]",
+          "as": "emoji"
         },
-        "mark": "circle",
-        "encoding": {
-          "longitude": {
-            "field": "Longitude",
-            "type": "quantitative"
-          },
-          "latitude": {
-            "field": "Latitude",
-            "type": "quantitative"
-          },
-          "size": {
-            "value": 200
-          },
-          "color": {
-            "field": "Category",
-            "type": "nominal",
-            "legend": {
-              "title": "Activity Categories"
-            }
-          },
-          "tooltip": [
-            {
-              "field": "Activities",
-              "type": "nominal",
-              "title": "Activity"
-            },
-            {
-              "field": "Location",
-              "type": "nominal",
-              "title": "Location"
-            },
-            {
-              "field": "Category",
-              "type": "nominal",
-              "title": "Category"
-            },
-            {
-              "field": "Region",
-              "type": "nominal",
-              "title": "Region"
-            }
-          ]
-        },
-        "transform": [
-          {
-            "filter": "datum.Region === regionSelection || regionSelection === 'All Regions'"
-          }
+        {
+          "filter": "datum.Category === categorySelection || categorySelection === 'All Categories'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 15
+      },
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "text": {"field": "emoji", "type": "nominal"},
+        "tooltip": [
+          {"field": "Activities", "type": "nominal", "title": "Activity"},
+          {"field": "Location", "type": "nominal", "title": "Location"},
+          {"field": "Category", "type": "nominal", "title": "Category"},
+          {"field": "Region", "type": "nominal", "title": "Region"}
         ]
       }
-    ],
-    "params": [
-      {
-        "name": "regionSelection",
-        "value": "All Regions",  
-        "bind": {
-          "input": "select",
-          "options": [
-            "All Regions",
-            "VIC",
-            "NSW",
-            "QLD",
-            "WA",
-            "SA",
-            "TAS",
-            "NT",
-            "ACT"
-          ],
-          "name": "Select Region: "
-        }
-      }
-    ]
-  }
-  
+    }
+  ],
+  "config": {}
+}
