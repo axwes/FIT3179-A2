@@ -7,25 +7,27 @@ body {
 
 /* Dashboard Container */
 .dashboard-container {
-  background-color: white; 
+  background-color: #87d8f7; 
   padding: 20px;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 1100px;
 }
 
-/* Styling for the charts */
-#country_origin_chart, #total_visitor_chart {
-  max-width: 1000px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  position: relative;
-  border: none;
-  padding: 0;
+.bowlby-one-regular {
+  font-family: "Bowlby One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+
+#total_visitor_chart {
+  width: 100%; /* Make the width responsive */
+  height: auto; /* Allow height to adjust automatically */
+  min-height: 300px; /* Ensure a minimum height for the map */
+  max-height: 100%; /* Ensure it doesn't overflow */
+}
+
 
 /* Button container for the charts */
 .btn-container {
@@ -77,7 +79,7 @@ h1, h2, p, .nav-link {
 
 .rect-title {
   display: block; /* Block ensures it takes up the full width of its container */
-  background-color: black; /* Light gray background */
+  background-color: e6f0f7; /* Light gray background */
   padding: 10px 20px;
   border-radius: 8px;
   font-weight: bold;
@@ -89,7 +91,7 @@ h1, h2, p, .nav-link {
 
 .rect-subtitle {
   display: block; /* Ensures the block is full width */
-  background-color: black; /* Light gray background */
+  background-color: e6f0f7; /* Light gray background */
   padding: 8px 16px;
   border-radius: 8px;
   font-size: 1.75rem;

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "rgba(0, 0, 0, 0)", 
-  "width": 800,
-  "height": 500,
+  "background": "#cce6ff", 
+  "width": "container",
+  "height": 300,
   "config": {
     "axis": {
       "domain": false,
@@ -15,14 +15,13 @@
   "params": [
     {
       "name": "Year_selection",
-      "value": 2018,
+      "value": 2023,
       "bind": {
         "input": "range",
         "min": 1991,
         "max": 2023,
         "step": 1,
-        "name": "Select Year: ",
-        "labelColor": "#ff7043"
+        "name": "Select Year: "
       }
     }
   ],
@@ -84,8 +83,8 @@
         "color": {
           "field": "Total Visitors",
           "type": "quantitative",
-          "scale": {"scheme": "browns"},
-          "legend": {"format": ".2s"}
+          "scale": {"scheme": "greens"},
+          "legend": {"format": ".2s","offset": 50}
         },
         "tooltip": [
           {"field": "States", "type": "nominal", "title": "State"},
@@ -106,7 +105,7 @@
       "transform": [
         {"filter": "datum.Year == Year_selection"},
         {
-          "calculate": "'Most tourists in ' + datum.States + ': ' + datum['Total Visitors']",
+          "calculate": "split('Highest:' + datum['Total Visitors'] + '  ' + datum.States, '  ')",
           "as": "top_visited_text"
         }
       ],
@@ -115,7 +114,7 @@
         "longitude": {"field": "Longitude"},
         "latitude": {"field": "Latitude"},
         "text": {"field": "top_visited_text"},
-        "color": {"value": "#00796b"},  
+        "color": {"value": "black"},  
         "tooltip": [
           {"field": "States", "type": "nominal", "title": "Top Visited State"},
           {"field": "Total Visitors", "type": "quantitative", "title": "Number of Visitors"}
@@ -129,7 +128,7 @@
       "transform": [
         {"filter": "datum.Year == Year_selection"},
         {
-          "calculate": "'Least tourists in ' + datum.States + ': ' + datum['Total Visitors']",
+          "calculate": "'Lowest:' + datum.States + ': ' + datum['Total Visitors']",
           "as": "least_visited_text"
         }
       ],
@@ -138,8 +137,9 @@
         "longitude": {"field": "Longitude"},
         "latitude": {"field": "Latitude"},
         "text": {"field": "least_visited_text"},
-        "color": {"value": "#ff7043"}  
+        "color": {"value": "black"}  
       }
     }
   ]
 }
+
