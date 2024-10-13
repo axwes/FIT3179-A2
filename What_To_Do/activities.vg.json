@@ -73,7 +73,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/What_To_Do/australiaActivities.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/What_To_Do/activities.csv"
       },
       "transform": [
         {
