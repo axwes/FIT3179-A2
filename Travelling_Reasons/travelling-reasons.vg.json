@@ -1,89 +1,77 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "background": "rgba(0, 0, 0, 0)", 
-    "data": {
-      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Travelling_Reasons/Travel%20Reasons.csv"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "rgba(0, 0, 0, 0)",
+  "data": {
+    "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Travelling_Reasons/Travel%20Reasons.csv"
+  },
+  "config": {
+    "axis": {
+      "domain": false,
+      "grid": false
     },
-    "config": {
-      "axis": {
-        "domain": false,
-        "grid": false
-      },
-      "view": {
-        "stroke": null
-      }
-    },
-    "transform": [
-      {
-        "filter": "datum.Year == yearSelection"
-      },
-      {
-        "window": [{"op": "sum", "field": "Total", "as": "TotalYear"}],
-        "frame": [null, null]
-      },
-      {
-        "calculate": "datum.Total / datum.TotalYear",
-        "as": "Percentage"
-      }
-    ],
-    "params": [
-      {
-        "name": "yearSelection",
-        "value": 1991,
-        "bind": {
-          "input": "range",
-          "min": 1991,
-          "max": 2023,
-          "step": 1,
-          "name": "Select Year: "
-        }
-      }
-    ],
-    "mark": "bar",
-    "width": 800,
-    "height": 80,
-    "encoding": {
-      "x": {
-        "field": "Percentage",
-        "type": "quantitative",
-        "stack": "normalize", 
-        "axis": {
-          "title": "Percentage",
-          "format": ".0%" 
-        }
-      },
-      "y": {
-        "field": "Year",
-        "type": "nominal",
-        "axis": {
-          "title": "Year"
-        }
-      },
-      "color": {
-        "field": "Reasons Of Travelling",
-        "type": "nominal",
-        "scale": {
-          "range": ["#FFB3BA", "#FFDFBA", "#FFFFBA", "#BAFFC9", "#BAE1FF", "#D9D2E9", "#E6B3CC"]
-        },
-        "legend": {
-            "orient": "bottom",        
-            "direction": "horizontal", 
-            "title": "Reasons for Travelling",  
-            "titleFontSize": 14,      
-            "labelFontSize": 12,      
-            "padding": 10,            
-            "offset": -5             
-          }
-      },
-      "tooltip": [
-        {"field": "Reasons Of Travelling", "title": "Reason"},
-        {
-          "field": "Percentage",
-          "title": "Percentage",
-          "type": "quantitative",
-          "format": ".1%"
-        }
-      ]
+    "view": {
+      "stroke": null
     }
-  }
-  
+  },
+  "transform": [
+    {
+      "filter": "datum.Year == yearSelection"
+    },
+    {
+      "window": [{"op": "sum", "field": "Total", "as": "TotalYear"}],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.Total / datum.TotalYear",
+      "as": "Percentage"
+    }
+  ],
+  "params": [
+    {
+      "name": "yearSelection",
+      "value": 1991,
+      "bind": {
+        "input": "range",
+        "min": 1991,
+        "max": 2023,
+        "step": 1,
+        "name": "Select Year: "
+      }
+    }
+  ],
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "Percentage",
+      "type": "quantitative",
+      "stack": true
+    },
+    "color": {
+      "field": "Reasons Of Travelling",
+      "type": "nominal",
+      "scale": {
+        "range": ["#4C78A8", "#F58518", "#54A24B", "#E45756", "#76B7B2", "#9C755F", "#FF9DA7"]
+      },
+      "legend": {
+        "orient": "left",
+        
+        "title": "Reasons for Travelling",
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "padding": 10,
+        "offset": -15
+      }
+    },
+    "tooltip": [
+      {"field": "Reasons Of Travelling", "title": "Reason"},
+      {
+        "field": "Percentage",
+        "title": "Percentage",
+        "type": "quantitative",
+        "format": ".1%"
+      }
+    ]
+  },
+  "width": "container",
+  "height": 400
+}

@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "#cce6ff", 
-  "width": "container",
-  "height": 300,
+  "background": "rgba(0, 0, 0, 0)",
+  "width": 900,
+  "height": 600,
   "config": {
     "axis": {
       "domain": false,
@@ -84,7 +84,7 @@
           "field": "Total Visitors",
           "type": "quantitative",
           "scale": {"scheme": "greens"},
-          "legend": {"format": ".2s","offset": 50}
+          "legend": {"format": ".2s","offset": 10}
         },
         "tooltip": [
           {"field": "States", "type": "nominal", "title": "State"},

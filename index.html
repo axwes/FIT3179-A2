@@ -23,18 +23,16 @@
       <img src="images/titlepng.png" alt="Title Image" class="img-fluid" style="">
     </div>
 
-    <div class="card" style="background-color: #e6f0f7;">
+    <div class="card mb-4" style="background-color: #e6f0f7; ">
       <div class="card-body">
-        <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight:900;">WHY TRAVEL TO AUSTRALIA?</h2>
+        <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight:900;">VISITOR'S ORIGIN</h2>
 
         <!-- Bootstrap Grid System for Map on the Left and Text on the Right -->
         <div class="row">
           <!-- Map Section (Left) -->
           <div class="col-md-6">
             <div id="visitor" role="tabpanel">
-              <div id="total_visitor_chart">
-                <!-- Placeholder for Map -->
-                <p>Map goes here</p>
+              <div id="country_origin_chart">
               </div>
             </div>
           </div>
@@ -43,7 +41,9 @@
           <div class="col-md-6">
             <div class="text-center">
               <h3 style="color: #ad7858;">A Destination for Every Traveler</h3>
-              <p>Australia’s diverse states offer unique experiences for every traveler. New South Wales leads in visitors, thanks to iconic spots like Sydney and Bondi Beach. Queensland draws nature lovers to its tropical beaches and the Great Barrier Reef, while Victoria attracts with Melbourne’s vibrant culture. Western Australia and South Australia appeal to those seeking remote adventures, and Tasmania offers a peaceful retreat with its stunning wilderness. This variety shows how Australia’s regions cater to both city explorers and nature enthusiasts alike.</p>
+              <p>Australia attracts millions of visitors worldwide with its stunning landscapes, vibrant cities, and rich culture. Iconic landmarks like the <strong>Sydney Opera House</strong>, <strong>Great Barrier Reef</strong>, and <strong>Uluru</strong> offer something for every traveler. Visitors from countries such as <strong>New Zealand</strong>, <strong>China</strong>, the <strong>United States</strong>, and the <strong>UK</strong> are drawn to its <strong>pristine beaches</strong>, unique wildlife, and <strong>outdoor adventures</strong>. Whether exploring urban hubs or enjoying Australia’s <strong>diverse culinary scene</strong>, the country’s <strong>multicultural and welcoming atmosphere</strong> makes it a top travel destination.</p>
+
+
             </div>
           </div>
         </div>
@@ -51,14 +51,85 @@
       </div>
     </div>
 
+    <div class="card mb-4" style="background-color: #87d8f7;">
+      <div class="card-body">
+        <h2 class="text-center mb-4 bowlby-one-regular" style="color: #0f4a60; font-weight: 500;">Travel Motivations</h2>
+        <div class="row">
+          <!-- Text Section (Left) -->
+          <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+              <h3 style="color: #0f4a60;">Why People Travel to Australia</h3>
+              <p>From <strong>leisure</strong> to <strong>business</strong>, Australia attracts a variety of travelers for different reasons. Whether it's exploring the country's breathtaking landscapes or engaging in commercial activities, people from all walks of life find their own reasons to visit this incredible destination.</p>
+            </div>
+          </div>
 
-    <!-- Reason for Travelling -->
-    <h2 class="text-center text-secondary mb-4">Reasons for travelling</h2>
-    <div id="travel_reasons" class="d-flex justify-content-center align-items-center"></div>
+          <div class="col-md-6">
+            <div id="travel_reasons"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <!-- Why Travel to Australia -->
-    <h2 class="text-center text-secondary mb-4 rect-subtitle">WHAT TO DO IN AUSTRALIA?</h2>
-    <div id="activities" class="d-flex justify-content-center align-items-center"></div>
+  
+
+    <div id="travelTrendsCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- First Chart: Activities Map -->
+        <div class="carousel-item active">
+          <div class="card mb-4" style="background-color: #e6f0f7;">
+            <div class="card-body">
+              <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight: 900;">What To Do In Australia?</h2>
+              <div id="activities-map-container" style="display: flex; justify-content: center; align-items: center;">
+                <div id="activities" role="tabpanel">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4" style="background-color: #e6f0f7;">
+            <div class="card-body">
+              <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight: 900;">INTERESTING FACTS:</h2>
+              <div id="facts-container" style="display: flex; justify-content: center; align-items: center;">
+                <p>Lol</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Second Chart: Total Visitor Chart -->
+        <div class="carousel-item">
+          <div class="card mb-4" style="background-color: #e6f0f7;">
+            <div class="card-body">
+              <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight: 900;">Most Visited State In Australia</h2>
+              <div id="total-visitor-chart-container" style="display: flex; justify-content: center; align-items: center;">
+                <div id="total_visitor_chart" role="tabpanel">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-4" style="background-color: #e6f0f7;">
+            <div class="card-body">
+              <h2 class="text-center bowlby-one-regular" style="color: #ad7858; font-weight: 900;">INTERESTING FACTS:</h2>
+              <div id="facts-container" style="display: flex; justify-content: center; align-items: center;">
+                <p>Lol</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#travelTrendsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#travelTrendsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    
+
+    
 
     <script src="vega_lite_vis.js"></script>
 </body>

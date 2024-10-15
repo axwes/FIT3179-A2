@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Activities across Australia with Zoom, Region, and Category Filtering",
-  "width": "900",
-  "height": "600",
+  "width": 900,
+  "height": 550,
+  "background": "rgba(0, 0, 0, 0)",
+  
   "params": [
     {
       "name": "zoom_level",
@@ -69,7 +70,7 @@
         "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Each_State_Visitors/australia_map.json",
         "format": {"type": "topojson", "feature": "STE_2021_AUST_GDA2020"}
       },
-      "mark": {"type": "geoshape", "stroke": "white", "fill": "#ddd"}
+      "mark": {"type": "geoshape", "stroke": "#4A90E2", "fill": "#C5E1A5"}
     },
     {
       "data": {
@@ -77,7 +78,7 @@
       },
       "transform": [
         {
-          "calculate": "{'Activities & Adventure': '🧗‍♂️', 'Relaxation & Wellness': '🏖️', 'Sightseeing & Nature': '🏞️'}[datum.Category]",
+          "calculate": "{'Activities & Adventure': '🏂', 'Relaxation & Wellness': '🏖️', 'Sightseeing & Nature': '🏞️'}[datum.Category]",
           "as": "emoji"
         },
         {
@@ -101,7 +102,57 @@
           {"field": "Region", "type": "nominal", "title": "Region"}
         ]
       }
+    },
+    {
+      "data": {
+        "values": [
+          {"category": "Activities & Adventure", "emoji": "🏂", "y_pos": 100},
+          {"category": "Relaxation & Wellness", "emoji": "🏖️", "y_pos": 105},
+          {"category": "Sightseeing & Nature", "emoji": "🏞️", "y_pos": 110}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 15
+      },
+      "encoding": {
+        "x": {"value": 20},  
+        "y": {"field": "y_pos", "type": "quantitative", "axis": null}, 
+        "text": {"field": "emoji", "type": "nominal"},
+        "tooltip": {"field": "category", "type": "nominal", "title": "Category"}
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"category": "Activities & Adventure", "y_pos": 100},
+          {"category": "Relaxation & Wellness", "y_pos": 105},
+          {"category": "Sightseeing & Nature", "y_pos": 110}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "fontSize": 12
+      },
+      "encoding": {
+        "x": {"value": 45}, 
+        "y": {"field": "y_pos", "type": "quantitative"},  
+        "text": {"field": "category", "type": "nominal"},
+        "tooltip": {"field": "category", "type": "nominal", "title": "Category"}
+      }
     }
   ],
-  "config": {}
+  "config": {
+    "axis": {
+      "domain": false,
+      "grid": false
+    },
+    "view": {
+      "stroke": null
+    }
+  }
 }

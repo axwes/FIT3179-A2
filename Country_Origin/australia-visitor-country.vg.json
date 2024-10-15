@@ -1,70 +1,108 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "background": "rgba(0, 0, 0, 0)", 
-    "width": 800,
-    "height": 500,
-    "config": {
-      "axis": {
-        "domain": false,
-        "grid": false
-      },
-      "view": {
-        "stroke": null
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "width": 500,
+  "height": 500,
+  "title": "Top 10 Source Countries of Visitors to Australia",
+  "padding": {"left": 5, "right": 5, "top": 20, "bottom": 0},
+  "autosize": "none",
+  "signals": [
+    {"name": "cx", "update": "width / 2"},
+    {"name": "cy", "update": "height / 2"},
+    {
+      "name": "gravityX",
+      "value": 0.05
+    },
+    {
+      "name": "gravityY",
+      "value": 0.05
+    },
+    {
+      "name": "selectedYear",  
+      "value": 2024,  
+      "bind": {
+        "input": "select",
+        "options": [2019, 2022, 2023, 2024],
+        "name": "Select Year: "
       }
+    }
+  ],
+  "data": [
+    {
+      "name": "table",
+      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/top%2010%20source%20country.csv",
+      "format": {"type": "csv"},
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.Year == selectedYear" 
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "size",
+      "domain": {"data": "table", "field": "Number of Visitors"},
+      "range": [9000, 16000]
     },
-    "projection": {"type": "equirectangular"},
-    "data": {
-      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/world_map.json",
-      "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-    },
-    "layer": [
-      {
-        "mark": {"type": "geoshape", "stroke": "black", "strokeWidth": 0.5},
-        "encoding": {
-          "color": {
-            "condition": {
-              "test": "datum.properties.ADM0_A3 === 'AUS'", 
-              "value": "#71797E"
-            },
-            "value": "#b0884d",
-            "legend": null   
-          }
+    {
+      "name": "color",
+      "type": "ordinal",
+      "domain": {"data": "table", "field": "Country of Residence"},
+      "range": "ramp"
+    }
+  ],
+  "marks": [
+    {
+      "name": "nodes",
+      "type": "symbol",
+      "from": {"data": "table"},
+      "encode": {
+        "enter": {
+          "fill": {"scale": "color", "field": "Country of Residence"},
+          "xfocus": {"signal": "cx"},
+          "yfocus": {"signal": "cy"}
+        },
+        "update": {
+          "size": {"signal": "pow(datum['Number of Visitors'], 1.1)", "scale": "size"},
+          "stroke": {"value": "white"},
+          "strokeWidth": {"value": 1},
+          "tooltip": {"signal": "datum"}
         }
       },
-      {
-        "data": {
-          "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Country_Origin/Country%20Visitor.csv",
-          "format": {"type": "csv"}
+      "transform": [
+        {
+          "type": "force",
+          "iterations": 100,
+          "static": false,
+          "forces": [
+            {
+              "force": "collide",
+              "iterations": 2,
+              "radius": {"expr": "sqrt(datum.size) / 2"}
+            },
+            {"force": "center", "x": {"signal": "cx"}, "y": {"signal": "cy"}},
+            {"force": "x", "x": "xfocus", "strength": {"signal": "gravityX"}},
+            {"force": "y", "y": "yfocus", "strength": {"signal": "gravityY"}}
+          ]
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "from": {"data": "nodes"},
+      "encode": {
+        "enter": {
+          "align": {"value": "center"},
+          "baseline": {"value": "middle"},
+          "fontSize": {"value": 15},
+          "fontWeight": {"value": "bold"},
+          "fill": {"value": "white"},
+          "text": {"field": "datum['Country of Residence']"}
         },
-        "layer": [
-          {
-            "mark": "circle",
-            "encoding": {
-              "longitude": {"field": "Longitude", "type": "quantitative"},
-              "latitude": {"field": "Latitude", "type": "quantitative"},
-              "size": {"field": "Number Of Visitors", "type": "quantitative", "scale": {"range": [100, 1000]}, "legend": null},
-              "color": {
-                "value": "white"
-              },
-              "tooltip": [
-                {"field": "Country of Residence", "type": "nominal"},
-                {"field": "Number Of Visitors", "type": "quantitative"}
-              ]
-            }
-          },
-          {
-            "mark": {"type": "rule", "color": "white", "strokeWidth": 2},
-            "encoding": {
-              "longitude": {"field": "Longitude", "type": "quantitative"},
-              "latitude": {"field": "Latitude", "type": "quantitative"},
-              "longitude2": {"datum": 134.04972},  
-              "latitude2": {"datum": -24.129522}, 
-              "tooltip": [{"field": "Country of Residence"}]
-            }
-          }
-        ]
+        "update": {"x": {"field": "x"}, "y": {"field": "y"}}
       }
-    ]
-  }
-  
+    }
+  ]
+}
   
