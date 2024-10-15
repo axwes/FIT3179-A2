@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "background": "rgba(0, 0, 0, 0)",
+    "data": {
+      "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Spending/spending.csv"
+    },
+    "config": {
+      "view": {
+        "stroke": null
+      }
+    },
+    "transform": [
+      {
+        "filter": "datum.States == stateSelection"
+      },
+      {
+        "window": [{"op": "sum", "field": "Spent ($m)", "as": "TotalSpent"}],
+        "frame": [null, null]
+      },
+      {
+        "calculate": "datum['Spent ($m)'] / datum.TotalSpent",
+        "as": "Percentage"
+      },
+      {
+        "calculate": "round(datum.Percentage * 100) + '%'",
+        "as": "PercentageLabel"
+      }
+    ],
+    "params": [
+      {
+        "name": "stateSelection",
+        "value": "Total(a)",
+        "bind": {
+          "input": "select",
+          "options": [
+            "Total(a)",
+            "New South Wales",
+            "Victoria",
+            "Queensland",
+            "South Australia",
+            "Western Australia",
+            "Tasmania",
+            "Northern Territory",
+            "Australia Capital Territory"
+          ],
+          "name": "Select State: "
+        }
+      }
+    ],
+    "encoding": {
+      "theta": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "stack": true
+      },
+      "color": {
+        "field": "Category",
+        "type": "nominal",
+        "legend": {
+          "title": "Spending Categories"
+        }
+      },
+      "tooltip": [
+        {"field": "Category", "title": "Category"},
+        {"field": "Spent ($m)", "title": "Amount Spent ($m)", "type": "quantitative"},
+        {"field": "PercentageLabel", "title": "Percentage"}
+      ]
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "arc",
+          "outerRadius": 145
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "radius": 160,
+          "fontSize": 15,
+          "fontWeight": "bold",
+          "fill": "white"
+        },
+        "encoding": {
+          "text": {
+            "field": "PercentageLabel",
+            "type": "nominal"
+          }
+        }
+      }
+    ],
+    "width": 300,
+    "height": 400
+  }
+  

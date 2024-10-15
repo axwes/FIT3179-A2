@@ -24,85 +24,11 @@ font-size: 1.5rem;
   font-style: normal;
 }
 
-
 #total_visitor_chart {
   width: 100%; /* Make the width responsive */
   height: auto; /* Allow height to adjust automatically */
   min-height: 300px; /* Ensure a minimum height for the map */
   max-height: 100%; /* Ensure it doesn't overflow */
-}
-
-
-/* Button container for the charts */
-.btn-container {
-  position: absolute;
-  bottom: 10px;
-}
-
-/* Yellow Font */
-.brown-text {
-  color: #b0884d; /* Sets the text color to yellow */
-}
-
-/* White Font */
-.white-text {
-  color: black; /* Sets the text color to white */
-}
-
-/* Tabs */
-.nav-tabs .nav-link.active {
-  background-color: #ffcccc; /* Light pastel pink for the active tab */
-  color: #4d4d4d; /* Dark grey for contrast */
-}
-
-.nav-tabs .nav-link:hover {
-  background-color: #ffb3b3; /* Darker pastel pink on hover */
-  color: #4d4d4d; /* Dark grey text */
-}
-
-/* Content padding */
-.tab-content {
-  padding: 20px;
-}
-
-/* Main title */
-h1 {
-  color: #ff9999; /* Pastel red for the main title */
-  font-weight: bold;
-}
-
-/* Section title */
-h2 {
-  color: #ff9999; /* Pastel red for the section title */
-}
-
-/* General text */
-h1, h2, p, .nav-link {
-  color: #4d4d4d; /* Dark grey for all text */
-}
-
-.rect-title {
-  display: block; /* Block ensures it takes up the full width of its container */
-  background-color: e6f0f7; /* Light gray background */
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 2.5rem;
-  margin: 0 auto; /* Center the title horizontally */
-  width: 100%; /* Shrink the block width to fit the text */
-  height: 100%;
-}
-
-.rect-subtitle {
-  display: block; /* Ensures the block is full width */
-  background-color: e6f0f7; /* Light gray background */
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 1.75rem;
-  color: #6c757d;
-  margin: 0 auto; /* Center the subtitle horizontally */
-  width: 80%;
-  height: 100%;
 }
 
 #travel_reasons {
@@ -114,18 +40,6 @@ h1, h2, p, .nav-link {
   max-width: 1000px; /* Restrict the maximum width for better centering */
 }
 
-.map-overlay {
-  position: absolute;
-  top: 20px; /* Adjust this value based on how far down you want the text */
-  left: 20px; /* Adjust this value based on how far to the right you want the text */
-  z-index: 10; /* Ensures the text stays above the map */
-}
-
-.overlay-text {
-  position: absolute;  /* Make the text overlay positioned absolutely */
-  color: black;        /* Text color */
-  font-size: 15px;     /* Font size */
-}
 
 
 

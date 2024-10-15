@@ -1,9 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 900,
-  "height": 550,
+  "height": 670,
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  },
   "background": "rgba(0, 0, 0, 0)",
-  
   "params": [
     {
       "name": "zoom_level",
@@ -120,8 +124,7 @@
       "encoding": {
         "x": {"value": 20},  
         "y": {"field": "y_pos", "type": "quantitative", "axis": null}, 
-        "text": {"field": "emoji", "type": "nominal"},
-        "tooltip": {"field": "category", "type": "nominal", "title": "Category"}
+        "text": {"field": "emoji", "type": "nominal"}
       }
     },
     {
@@ -141,18 +144,8 @@
       "encoding": {
         "x": {"value": 45}, 
         "y": {"field": "y_pos", "type": "quantitative"},  
-        "text": {"field": "category", "type": "nominal"},
-        "tooltip": {"field": "category", "type": "nominal", "title": "Category"}
+        "text": {"field": "category", "type": "nominal"}
       }
     }
-  ],
-  "config": {
-    "axis": {
-      "domain": false,
-      "grid": false
-    },
-    "view": {
-      "stroke": null
-    }
-  }
+  ]
 }

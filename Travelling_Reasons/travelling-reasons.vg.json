@@ -1,17 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "background": "rgba(0, 0, 0, 0)",
+  "background": "rgba(0, 0, 0, 0)", 
   "data": {
     "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/main/Travelling_Reasons/Travel%20Reasons.csv"
-  },
-  "config": {
-    "axis": {
-      "domain": false,
-      "grid": false
-    },
-    "view": {
-      "stroke": null
-    }
   },
   "transform": [
     {
@@ -29,7 +20,7 @@
   "params": [
     {
       "name": "yearSelection",
-      "value": 1991,
+      "value": 2023,
       "bind": {
         "input": "range",
         "min": 1991,
@@ -39,28 +30,39 @@
       }
     }
   ],
-  "mark": "arc",
+  "mark": "bar",
+  "width": 800,
+  "height": 50,
   "encoding": {
-    "theta": {
+    "x": {
       "field": "Percentage",
       "type": "quantitative",
-      "stack": true
+      "stack": "normalize", 
+      "axis": {
+        "title": "Percentage",
+        "format": ".0%" 
+      }
+    },
+    "y": {
+      "field": "Year",
+      "type": "nominal",
+      "axis": null
     },
     "color": {
       "field": "Reasons Of Travelling",
       "type": "nominal",
       "scale": {
-        "range": ["#4C78A8", "#F58518", "#54A24B", "#E45756", "#76B7B2", "#9C755F", "#FF9DA7"]
+        "range": ["#FFA726", "#FF7043", "#FFEE58", "#66BB6A", "#26A69A", "#AB47BC", "#EC407A"]
       },
       "legend": {
-        "orient": "left",
-        
-        "title": "Reasons for Travelling",
-        "titleFontSize": 14,
-        "labelFontSize": 12,
-        "padding": 10,
-        "offset": -15
-      }
+          "orient": "bottom",        
+          "direction": "horizontal", 
+          "title": "Reasons for Travelling",  
+          "titleFontSize": 14,      
+          "labelFontSize": 12,      
+          "padding": 10,            
+          "offset": -5             
+        }
     },
     "tooltip": [
       {"field": "Reasons Of Travelling", "title": "Reason"},
@@ -71,7 +73,5 @@
         "format": ".1%"
       }
     ]
-  },
-  "width": "container",
-  "height": 400
+  }
 }
