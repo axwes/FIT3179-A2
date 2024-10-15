@@ -52,7 +52,7 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/tourist_top_states.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/visitor_all_states.csv"
       },
       "transform": [
         {
@@ -81,18 +81,18 @@
       "encoding": {
         "shape": {"field": "geo", "type": "geojson"},
         "color": {
-          "field": "Total Visitors",
+          "field": "Visitors per Capita",
           "type": "quantitative",
-          "scale": {"scheme": "greens"},
-          "legend": {"format": ".2s","offset": 10}
+          "scale": {"scheme": "blues"},
+          "legend": {"format": ".2f","offset": 10}
         },
         "tooltip": [
           {"field": "States", "type": "nominal", "title": "State"},
           {
-            "field": "Total Visitors",
+            "field": "Visitors per Capita",
             "type": "quantitative",
-            "title": "Number of Tourists",
-            "format": ","
+            "title": "Visitors per Capita",
+            "format": ".4f"
           },
           {"field": "Year", "type": "quantitative", "title": "Year"}
         ]
@@ -100,46 +100,43 @@
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/Top_Visited_States_Per_Year.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/highest_state_visitors.csv"
       },
       "transform": [
         {"filter": "datum.Year == Year_selection"},
         {
-          "calculate": "split('Highest:' + datum['Total Visitors'] + '  ' + datum.States, '  ')",
-          "as": "top_visited_text"
+          "calculate": "'Highest:' + datum.States + ': ' + datum['Visitors']",
+          "as": "highest_visited_text"
         }
       ],
       "mark": {"type": "text", "dx": 5, "dy": -10, "fontStyle": "italic", "fontSize": 14},
       "encoding": {
-        "longitude": {"field": "Longitude"},
+        "longitude": {"field": "Logitude"}, 
         "latitude": {"field": "Latitude"},
-        "text": {"field": "top_visited_text"},
-        "color": {"value": "black"},  
-        "tooltip": [
-          {"field": "States", "type": "nominal", "title": "Top Visited State"},
-          {"field": "Total Visitors", "type": "quantitative", "title": "Number of Visitors"}
-        ]
+        "text": {"field": "highest_visited_text"},
+        "color": {"value": "black"}
       }
     },
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/Lowest_Visited_States_Per_Year.csv"
+        "url": "https://raw.githubusercontent.com/axwes/FIT3179-A2/refs/heads/main/Each_State_Visitors/lowest_state_visitors.csv"
       },
       "transform": [
         {"filter": "datum.Year == Year_selection"},
         {
           "calculate": "'Lowest:' + datum.States + ': ' + datum['Total Visitors']",
-          "as": "least_visited_text"
+          "as": "lowest_visited_text"
         }
       ],
       "mark": {"type": "text", "dx": 5, "dy": -10, "fontStyle": "italic", "fontSize": 14},
       "encoding": {
         "longitude": {"field": "Longitude"},
         "latitude": {"field": "Latitude"},
-        "text": {"field": "least_visited_text"},
-        "color": {"value": "black"}  
+        "text": {"field": "lowest_visited_text"},
+        "color": {"value": "black"}
       }
     }
   ]
 }
+
 
